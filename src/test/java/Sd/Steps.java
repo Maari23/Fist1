@@ -1,17 +1,39 @@
 package Sd;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import Pageo.Login;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Steps {
+	
+	
+	@After()
+	public void tear_down(Scenario scenario )
+	{
+
+		String str=scenario.getName().replace(" ","_");
+		
+		if(scenario.isFailed())
+		{
+		  byte[]  ss=	((TakesScreenshot)d).getScreenshotAs(OutputType.BYTES);
+		  scenario.attach(ss, "image/png", str);
+		}
+		
+		
+		d.close();
+	
+	}
 
 	public WebDriver d;
 	public  Login lp;
@@ -89,7 +111,7 @@ public void title_sould_be() throws InterruptedException {
 @And("close browser")
 public void close_browser() throws InterruptedException {
 	Thread.sleep(3000);
-	d.close();
+	
     
 }
 }

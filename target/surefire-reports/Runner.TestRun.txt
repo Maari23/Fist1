@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: Runner.TestRun
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 61.21 s - in Runner.TestRun
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 50.895 s <<< FAILURE! - in Runner.TestRun
+Login Test data driven #2(Login)  Time elapsed: 7.687 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="navbarText"]/ul/li[3]/a"}
+  (Session info: chrome=115.0.5790.110)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3712246c49f61cc0611c62c903246daf, findElement {using=xpath, value=//*[@id="navbarText"]/ul/li[3]/a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.110, chrome: {chromedriverVersion: 115.0.5790.102 (90efd4b0ad6..., userDataDir: C:\Users\Maari\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54430}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54430/devtoo..., se:cdpVersion: 115.0.5790.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3712246c49f61cc0611c62c903246daf
+
