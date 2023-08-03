@@ -24,7 +24,7 @@ Scenario: Login Test with Valid cred
     
     Examples:
     |   Email           |  Pass   |
-    | admin@yourstore.com | admin |
+    | admin@yourstore.com | admin@g123 |
     | admin@yourstore.com | admin@gmail.com  |
    
 
