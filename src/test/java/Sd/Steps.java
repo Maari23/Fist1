@@ -1,13 +1,19 @@
 package Sd;
 
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+
 import Pageo.Login;
+import Utility.Config;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -16,6 +22,40 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.TakesScreenshot;
 
 public class Steps {
+	
+	
+	public WebDriver d;
+	public  Login lp;
+	
+	@Before()
+	public void Setup( ) throws IOException
+	{
+		Config con = new Config();
+		Properties p =con.ReadConfig();
+		String br = p.getProperty("browser");
+		System.out.println(br);
+		
+		String path = System.getProperty("user.dir") + "/Driver/chromedriver.exe";
+		
+		if(br.equals("Chrome")) 
+		{
+			System.out.println("121");
+			System.setProperty("webdriver.chrome.driver", path);
+			 ChromeOptions chromeOptions = new ChromeOptions();
+			 chromeOptions.addArguments("--remote-allow-origins=*"); 
+			 WebDriver d = new ChromeDriver(chromeOptions);  
+			 this.d=d;
+		}
+		else if(br.equals("abc"))
+		{
+			System.out.println("abc");
+		}
+		
+		
+		
+		
+	}
+	
 	
 	
 	@After()
@@ -35,8 +75,7 @@ public class Steps {
 	
 	}
 
-	public WebDriver d;
-	public  Login lp;
+	
 	
 //	public  String url ="https://admin-demo.nopcommerce.com/admin/" ;
 //	public  String em = "admin@yourstore.com";
@@ -44,15 +83,6 @@ public class Steps {
 
 @Given("user iniate browser")
 public void user_iniate_browser() {
-	String path = System.getProperty("user.dir") + "/Driver/chromedriver.exe";
-	System.setProperty("webdriver.chrome.driver", path);
-  //  System.out.println(path);
-	
-	 ChromeOptions chromeOptions = new ChromeOptions();
-	 chromeOptions.addArguments("--remote-allow-origins=*"); 
-	 WebDriver d = new ChromeDriver(chromeOptions);  
-	 this.d=d;
-	 
 	 Login lp= new Login(d);
 	 this.lp=lp;
 	 System.out.println(d);
