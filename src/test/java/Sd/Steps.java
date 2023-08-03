@@ -22,12 +22,12 @@ public class Steps {
 	public void tear_down(Scenario scenario )
 	{
 
-		String str=scenario.getName().replace(" ","_");
+		String stri=scenario.getName().replace(" ","_");
 		
 		if(scenario.isFailed())
 		{
 		  byte[]  ss=	((TakesScreenshot)d).getScreenshotAs(OutputType.BYTES);
-		  scenario.attach(ss, "image/png", str);
+		  scenario.attach(ss, "image/png", stri);
 		}
 		
 		
