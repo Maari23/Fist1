@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features="C:\\Users\\Maari\\eclipse-workspace\\C_end\\Feature/FLog.feature"
 ,glue= {"Sd"},monochrome=true,dryRun=false,
 plugin= {"pretty","json:target/cucumber1.json","html:target/cucumber-html-report1.html"}
-,tags="@Smoke")
+,tags="@Smoke and @Regression")
 
 public class TestRun {
 
