@@ -10,9 +10,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="C:\\Users\\Maari\\eclipse-workspace\\C_end\\Feature/FLog.feature"
-,glue= {"Sd"},monochrome=true,
-
-plugin= {"pretty","json:target/cucumber1.json","html:target/cucumber-html-report1.html"})
+,glue= {"Sd"},monochrome=true,dryRun=false,
+plugin= {"pretty","json:target/cucumber1.json","html:target/cucumber-html-report1.html"}
+,tags="@Smoke")
 
 public class TestRun {
 

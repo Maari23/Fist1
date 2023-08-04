@@ -1,5 +1,6 @@
 Feature: Login
 
+@Smoke
 Scenario: Login Test with Valid cred 
 
     Given user iniate browser 
@@ -10,7 +11,8 @@ Scenario: Login Test with Valid cred
     When user click logout
     Then title sould be 
     And close browser
-    
+  
+  @Regression  
  Scenario Outline: Login Test data driven
 
     Given user iniate browser 
